@@ -8,13 +8,25 @@ public class Cliente {
     private StringProperty identificacion = new SimpleStringProperty();
     private StringProperty nombre = new SimpleStringProperty();
     private StringProperty apellido = new SimpleStringProperty();
-    
+
+
+    public Cliente(){}
+
+    public Cliente(String identificasion, String nombre, String apellido){
+        setIdentificacion(identificasion);
+        setNombre(nombre);
+        setApellido(apellido);
+    }
+
     public void setIdentificacion(String identificacion) {
         if(identificacion == null){
           throw new IllegalArgumentException("Nombre no puede ser Nulo");  
         }
         this.identificacion.set(identificacion);
     }
+
+
+
 
     public void setNombre(String nombre) {
         if(nombre == null){
@@ -30,7 +42,9 @@ public class Cliente {
         this.apellido.set(apellido);
     }
     
-    
+    public String toString(){
+        return getIdentificacion()+" "+getNombre()+" "+getApellido();
+    }
     
     public String getIdentificacion() {
         return identificacion.get();
