@@ -16,6 +16,13 @@ public class Producto {
     private IntegerProperty stock = new SimpleIntegerProperty();
 
  
+    public Producto(){}
+
+    public Producto(String nombre, int precio, int stock){
+        setNombre(nombre);
+        setPrecio(precio);
+        setStock(stock);
+    }
 
     public int getCodigo() {
         return codigo.get();
