@@ -15,13 +15,20 @@ public class Venta {
     private ObjectProperty<Cliente> cliente = new SimpleObjectProperty();
     private ObservableList<ProductoVenta> listaProductos
             = FXCollections.observableArrayList();
-    
+
+    public Venta(){}
+
+    public Venta(Cliente cliente){
+        setCliente(cliente);
+    }
+
     public void agregarProducto(ProductoVenta productoVenta,Producto producto) {
         if (productoVenta.getCantidad() < producto.getStock()) {
             throw new IllegalArgumentException("No hay stock disponible");
         }
         producto.setStock(producto.getStock() - productoVenta.getCantidad());
     }
+
 
     public int getCodigo() {
         return codigo.get();
@@ -48,6 +55,8 @@ public class Venta {
     }
 
     public LocalDate getFecha() {
+
+        setFecha(LocalDate.now());
         return fecha.get();
 
     }
@@ -65,7 +74,6 @@ public class Venta {
             throw new IllegalArgumentException("Cliente no puede ser nulo");
         }
         this.cliente.set(Cliente);
-
     }
 
     public ObjectProperty<Cliente> clienteProperty() {
@@ -84,5 +92,15 @@ public class Venta {
             total += productoVenta.subtotalizar();
         }
         return total;
+    }
+
+    public String toString(){
+        String venta;
+        venta = getCodigo() + " " + getFecha() + " " + getCliente() + "\n";
+        for(ProductoVenta productoVenta: listaProductos){
+            venta += productoVenta + "\n";
+        }
+        venta += "\t\t\t\t" + totalizar();
+        return venta;
     }
 }
