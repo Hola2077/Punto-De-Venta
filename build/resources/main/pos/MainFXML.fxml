@@ -8,8 +8,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1130.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <children>
+       
       <Pane layoutX="-5.0" prefHeight="59.0" prefWidth="1137.0" style="-fx-background-color: #03f507;" />
-      <Button fx:id="ButtonCompra" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="82.0" minHeight="15.0" mnemonicParsing="false" onMouseClicked="#MouseClicked" onMouseExited="#MouseExited" onMouseMoved="#MouseMoved" prefHeight="147.0" prefWidth="204.0" style="-fx-background-color: #00b7ff;" textAlignment="CENTER" textFill="#00b7ff">
+      
+      <Button fx:id="ButtonCompra" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="82.0" minHeight="15.0" mnemonicParsing="false" onMouseExited="#MouseExited" onMouseMoved="#MouseMoved" onMousePressed="#MousePressed" prefHeight="147.0" prefWidth="204.0" style="-fx-background-color: #00b7ff;" textAlignment="CENTER" textFill="#00b7ff">
          <graphic>
             <ImageView fitHeight="127.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,6 +25,21 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="367.0" layoutY="462.0" mnemonicParsing="false" text="Button" textFill="#03f507" />
+      
+      <Button fx:id="ButtonCliente" alignment="CENTER" contentDisplay="CENTER" layoutX="251.0" layoutY="82.0" minHeight="15.0" mnemonicParsing="false" onMouseExited="#MouseExitedCliente" onMouseMoved="#MouseMovedCliente" onMousePressed="#MousePressedCliente" prefHeight="147.0" prefWidth="204.0" style="-fx-background-color: #00b7ff;" textAlignment="CENTER" textFill="#00b7ff">
+         <graphic>
+            <ImageView fitHeight="127.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Clientes.png" />
+               </image>
+               <cursor>
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      
    </children>
 </Pane>

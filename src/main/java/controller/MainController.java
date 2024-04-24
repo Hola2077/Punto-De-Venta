@@ -1,16 +1,25 @@
 
 package controller;
 
+
+
+import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import static javafx.scene.paint.Color.color;
-
+import view.*;
 
 public class MainController {
     
+//    ClienteView clientes = new ClienteView();
+    
     @FXML
     private Button ButtonCompra;
+    
+    @FXML
+    private Button ButtonCliente;
 
     @FXML
     void MouseMoved(MouseEvent event) {
@@ -22,16 +31,27 @@ public class MainController {
         ButtonCompra.setStyle("-fx-background-color:  #00b7ff");
     }
     
-    
     @FXML
-    void MouseClicked(MouseEvent event) {
-//        ButtonCompra.setStyle("-fx-background-color:  #03f507");
+    void MousePressed(MouseEvent event) {
+        ButtonCompra.setStyle("-fx-background-color:  #03f507");
         
     }
     
     @FXML
-    void MousePressed(MouseEvent event) {
-        ButtonCompra.setStyle("-fx-background-color:  #03f507");
+    void MouseMovedCliente(MouseEvent event) {
+        ButtonCliente.setStyle("-fx-background-color: blue");
+    }
+    
+    @FXML
+    void MouseExitedCliente(MouseEvent event) {
+        ButtonCliente.setStyle("-fx-background-color:  #00b7ff");
+    }
+    
+    ClienteView cliente = new ClienteView();
+    @FXML
+    void MousePressedCliente(MouseEvent event) throws IOException {
+        ButtonCliente.setStyle("-fx-background-color:  #03f507");
+        cliente.mainn();
     }
 
     
