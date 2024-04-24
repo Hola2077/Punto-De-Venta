@@ -6,13 +6,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ClienteView extends Application {
 
-    public void mainn() throws IOException {
-        
+    public void main() throws IOException { 
         FXMLLoader clientesLoader = new FXMLLoader(getClass().getResource("/pos/ClienteFXML.fxml"));
         Parent clientes = (Parent) clientesLoader.load();
         Stage stage = new Stage();

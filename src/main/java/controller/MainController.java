@@ -20,10 +20,13 @@ public class MainController {
     
     @FXML
     private Button ButtonCliente;
-
+    
+    @FXML
+    private Button ButtonInventario;
+    
     @FXML
     void MouseMoved(MouseEvent event) {
-        ButtonCompra.setStyle("-fx-background-color: blue");
+        ButtonCompra.setStyle("-fx-background-color: #0091ff");
     }
     
     @FXML
@@ -39,7 +42,7 @@ public class MainController {
     
     @FXML
     void MouseMovedCliente(MouseEvent event) {
-        ButtonCliente.setStyle("-fx-background-color: blue");
+        ButtonCliente.setStyle("-fx-background-color: #0091ff");
     }
     
     @FXML
@@ -51,8 +54,24 @@ public class MainController {
     @FXML
     void MousePressedCliente(MouseEvent event) throws IOException {
         ButtonCliente.setStyle("-fx-background-color:  #03f507");
-        cliente.mainn();
+        cliente.main();
     }
-
+    @FXML
+    void MouseMovedInventario(MouseEvent event) {
+        ButtonInventario.setStyle("-fx-background-color: #0091ff");
+    }
+    
+    @FXML
+    void MouseExitedInventario(MouseEvent event) {
+        ButtonInventario.setStyle("-fx-background-color:  #00b7ff");
+    }
+    
+    ProductoView inventario = new ProductoView();
+    @FXML
+    void MousePressedInventario(MouseEvent event) throws IOException{
+        ButtonInventario.setStyle("-fx-background-color:  #03f507");
+        inventario.main();
+    }
+    
     
 }
