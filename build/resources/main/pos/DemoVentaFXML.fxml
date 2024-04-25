@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="35.0" layoutY="71.0" text="Código" />
+      <Label layoutX="35.0" layoutY="108.0" text="Cliente" />
+      <Label layoutX="35.0" layoutY="143.0" text="Producto" />
+      <TextField fx:id="textCodigoFactura" layoutX="99.0" layoutY="67.0" prefHeight="25.0" prefWidth="267.0" promptText="Código de Factura" />
+      <TextField fx:id="tetxIdCliente" layoutX="99.0" layoutY="103.0" prefHeight="25.0" prefWidth="92.0" promptText="Id del Cliente" />
+      <TextField fx:id="textNombreCliente" layoutX="218.0" layoutY="103.0" promptText="Nombre del Cliente" />
+      <TextField fx:id="textCodigoProducto" layoutX="99.0" layoutY="139.0" prefHeight="25.0" prefWidth="125.0" promptText="Código del Producto" />
+      <TextField fx:id="textProducto" layoutX="233.0" layoutY="139.0" prefHeight="25.0" prefWidth="134.0" promptText="Producto" />
+      <Label layoutX="411.0" layoutY="71.0" text="Cantidad" />
+      <TextField fx:id="TextCantidad" layoutX="483.0" layoutY="67.0" prefHeight="25.0" prefWidth="103.0" />
+      <Button fx:id="buttonAgregar" layoutX="483.0" layoutY="139.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Agregar" />
+      <TableView fx:id="tableViewVenta" layoutX="35.0" layoutY="215.0" prefHeight="200.0" prefWidth="655.0">
+        <columns>
+          <TableColumn fx:id="columnCodigoProducto" prefWidth="75.0" text="Codigo" />
+          <TableColumn fx:id="columnDescripcionProducto" prefWidth="75.0" text="Descripcion" />
+            <TableColumn fx:id="columnPrecioProducto" prefWidth="75.0" text="Precio" />
+            <TableColumn fx:id="columnCantidadProducto" prefWidth="75.0" text="Cantidad" />
+            <TableColumn fx:id="columnDescuentoVenta" prefWidth="75.0" text="Descuento" />
+            <TableColumn fx:id="columnSubtotalVenta" prefWidth="75.0" text="Subtotal" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="521.0" layoutY="430.0" text="Total" />
+      <TextField fx:id="textTotal" layoutX="565.0" layoutY="426.0" prefHeight="25.0" prefWidth="125.0" />
+   </children>
+</Pane>

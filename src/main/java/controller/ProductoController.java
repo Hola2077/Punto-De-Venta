@@ -48,7 +48,7 @@ public class ProductoController implements Initializable {
         producto.setPrecio(precio);
         String nombre;
         nombre = textProductoNombre.getText();
-        producto.setNombreProducto(nombre);
+        producto.setNombre(nombre);
     }
 
     @FXML
@@ -80,7 +80,7 @@ public class ProductoController implements Initializable {
             return;
         }
         textProductoCodigo.setText(producto.getCodigo() + "");
-        textProductoNombre.setText(producto.getNombreProducto() + "");
+        textProductoNombre.setText(producto.getNombre() + "");
         textProductoPrecio.setText(producto.getPrecio() + "");
 
     }
@@ -124,7 +124,7 @@ public class ProductoController implements Initializable {
                 -> cellData.getValue().codigoProperty());
 
         columnProductoNombre.setCellValueFactory(cellData
-                -> cellData.getValue().nombreProductoProperty());
+                -> cellData.getValue().nombreProperty());
 
         columnProductoPrecio.setCellValueFactory(cellData
                 -> cellData.getValue().precioProperty());

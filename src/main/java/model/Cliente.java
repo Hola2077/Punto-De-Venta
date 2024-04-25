@@ -1,27 +1,27 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package model;
 
+import java.util.Objects;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ *
+ * @author sistemas
+ */
+public final class Cliente {
 
-public class Cliente {
-
-    // Simepre que sea string, int, float or double coloco esa variable property
-    // Si es otro tipo de variable es ObjectProperty
-    private StringProperty identificacion = new SimpleStringProperty();
-    private StringProperty nombre = new SimpleStringProperty();
-    private StringProperty apellido = new SimpleStringProperty();
-
-    public Cliente() {
-        //Es un constructor cuando:Nombre igual a la clase y no tiene void 
-        //Constructor por default no tiene argumentos, pero usaremos lo sigte
-        setIdentificacion("SIN DEFINIR");
-        setNombre("SIN DEFINIR");
-        setApellido("SIN DEFINIR");
-    }
-    //Sobrecarga un metodo con el mismo nombre pero diferentes
-    //firma de un metodo esta compuesto por nombre,tipo y orden de parametros
+    private final StringProperty identificacion = new SimpleStringProperty();
+    private final StringProperty nombre = new SimpleStringProperty();
+    private final StringProperty apellido = new SimpleStringProperty();
+    private final IntegerProperty puntos = new SimpleIntegerProperty();
+    private final StringProperty direccion = new SimpleStringProperty();
+    private final StringProperty genero = new SimpleStringProperty();
 
     public Cliente(String identificacion, String nombre, String apellido) {
         setIdentificacion(identificacion);
@@ -29,31 +29,49 @@ public class Cliente {
         setApellido(apellido);
     }
 
-    public void setIdentificacion(String identificacion) {
-        //Validemos si la identificacion es adecuada
-        if (identificacion == null) {
-            throw new IllegalArgumentException("La identificacion no puede ser"
-                    + "nula");
+    public Cliente(String identificacion, String nombre, String apellido,
+            String genero) {
+        setIdentificacion(identificacion);
+        setNombre(nombre);
+        setApellido(apellido);
+        setGenero(genero);
+    }
 
-        }//Para identificar una propiedad en vez de un parametro utilizamos this
-        //Cuando por ejemplo tiene el mismo nombre (Identificacion)
+    public void setIdentificacion(String identificacion) {
+        if (identificacion == null) {
+            throw new IllegalArgumentException("Identificacion no puede ser"
+                    + " nula");
+        }
         this.identificacion.set(identificacion);
-    }//setIdentificacion
+    }
 
     public String getIdentificacion() {
         return identificacion.get();
-        //Puedo prescindir del this en este caso porque no existe confusion
-    }//getIdentificacion
+    }
 
     public StringProperty identificacionProperty() {
         return identificacion;
-    }//identificacion Property
+    }
 
-    // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    public void setGenero(String genero) {
+        if (genero == null) {
+            throw new IllegalArgumentException("Genero no puede ser"
+                    + " nula");
+        }
+        this.genero.set(genero);
+    }
+
+    public String getGenero() {
+        return genero.get();
+    }
+
+    public StringProperty generoProperty() {
+        return genero;
+    }
+
     public void setNombre(String nombre) {
-        //Validamos que el nombre sea adecuado
         if (nombre == null) {
-            throw new IllegalArgumentException("El nombre no puede ser nulo");
+            throw new IllegalArgumentException("Nombre no puede ser nulo");
         }
         this.nombre.set(nombre);
     }
@@ -65,12 +83,10 @@ public class Cliente {
     public StringProperty nombreProperty() {
         return nombre;
     }
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     public void setApellido(String apellido) {
-        //Validamos que el nombre sea adecuado
         if (apellido == null) {
-            throw new IllegalArgumentException("El nombre no puede ser nulo");
+            throw new IllegalArgumentException("Apellido no puede ser nulo");
         }
         this.apellido.set(apellido);
     }
@@ -83,10 +99,39 @@ public class Cliente {
         return apellido;
     }
 
-    //Para concatenar todo cuando llame a pantalla un cliente
-    //Los constructures siempre van debajo de las propiedades por convencion
+    public void setPuntos(int puntos) {
+        if (puntos < 0) {
+            throw new IllegalArgumentException("Los puntos no pueden ser negativos.");
+        }
+        this.puntos.set(puntos);
+    }
+
+    public int getPuntos() {
+        return puntos.get();
+    }
+
+    public IntegerProperty puntosProperty() {
+        return puntos;
+    }
+
+    public void setDireccion(String direccion) {
+        Objects.requireNonNull(direccion,
+                "Direccion no puede ser nula.");
+        this.direccion.set(direccion);
+    }
+
+    public String getDireccion() {
+        return this.direccion.get();
+    }
+
+    public StringProperty direccionProperty() {
+        return direccion;
+    }
+
+    @Override
     public String toString() {
-        return getIdentificacion() + "-" + getNombre() + "-" + getApellido();
+        return getIdentificacion() + " - " + getNombre() + " " + getApellido()
+                + " - " + getDireccion() + " - puntos: " + getPuntos();
     }
 
 }

@@ -1,40 +1,49 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
 package view;
 
+import java.time.LocalDate;
 import model.Cliente;
 import model.Producto;
-import model.ProductoVenta;
 import model.Venta;
 
+/**
+ *
+ * @author Sistemas
+ */
 public class DemoVenta {
 
     public static void main(String[] args) {
-        //Declaracion
-        Cliente cliente1;
-        Cliente cliente2;
-        Producto producto1;
-        Producto producto2;
-        Producto producto3;
-        ProductoVenta productoVenta1;
-        Venta venta1;
+        Cliente clienteUno = new Cliente("A-001", "Nicolay", 
+                "De Caro Paternina", "Cra. 59 #58-135");
         
-        //Instanciacion
-        cliente1 = new Cliente("1111", "ClienteUno", "ApellidoUno");
-        cliente2 = new Cliente();
-        cliente2.setIdentificacion("202456");
-        producto1 = new Producto(5, "Gaseosas", 1500, 500, "Unidad");
-        producto2=new Producto("Empanada", 2000, 40, "Total");
-        producto3= new Producto("Lapiz",5000, 0, "");
+        Producto productoUno = new Producto(100, "Coca-Cola", 5000,
+                100, 10, 10, "TIENDA");
+        // CANTIDAD 100 - LIMITE 10
         
-        venta1 = new Venta(cliente1);
+        Producto productoDos = new Producto(200, "Empanada", 
+                1000, 200, 10, 5, "TIENDA");
+        // CANTIDAD 200 - LIMITE 10
         
-        productoVenta1 = new ProductoVenta(producto1,5);
-        venta1.agregarProducto(productoVenta1);
-        productoVenta1= new ProductoVenta(producto2,2);
-        venta1.agregarProducto(productoVenta1);
-        productoVenta1 = new ProductoVenta(producto3,1);
-        venta1.agregarProducto(productoVenta1);
+        Producto productoTres = new Producto(300, "Pechuga", 
+                15000, 40, 2, 20, "DOMICILIO");
+        // CANTIDAD 40 - LIMITE 2
         
-        System.out.println(cliente1); //Muestra todo gracias a toString>Cliente
-        System.out.println(venta1);
+        Producto productoCuatro = new Producto(400, "Carne-Res", 
+                30000, 20, 1, 50, "DOMICILIO");
+        // CANTIDAD 20 - LIMITE 1
+        
+        Venta ventaUno = new Venta(clienteUno);
+
+        ventaUno.agregarProducto(productoUno, 5);
+        ventaUno.agregarProducto(productoDos, 5);
+        ventaUno.agregarProducto(productoTres, 1);
+        ventaUno.agregarProducto(productoCuatro, 1);
+        
+        ventaUno.acomularPuntos();
+        ventaUno.confirmarEnvio(LocalDate.now());
+        System.out.println(ventaUno);
     }
 }
