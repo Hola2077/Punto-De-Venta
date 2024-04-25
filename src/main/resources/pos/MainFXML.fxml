@@ -65,5 +65,20 @@
          </cursor>
       </Button>
       
+      <Button fx:id="ButtonDescuento" alignment="CENTER" contentDisplay="CENTER" layoutX="708.0" layoutY="82.0" minHeight="15.0" mnemonicParsing="false" onMouseExited="#MouseExitedDescuento" onMouseMoved="#MouseMovedDescuento" onMousePressed="#MousePressedDescuento" prefHeight="147.0" prefWidth="204.0" style="-fx-background-color: #00b7ff;" textAlignment="CENTER" textFill="#00b7ff">
+         <graphic>
+            <ImageView fitHeight="127.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Descuento.png" />
+               </image>
+               <cursor>
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      
    </children>
 </Pane>

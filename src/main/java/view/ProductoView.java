@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -18,6 +19,7 @@ public class ProductoView extends Application {
         Stage stage = new Stage();
         stage.setScene(new Scene(inventario)); 
         stage.setTitle("Inventario");
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
         
     }

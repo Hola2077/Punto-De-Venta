@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ClienteView extends Application {
@@ -16,6 +17,7 @@ public class ClienteView extends Application {
         Stage stage = new Stage();
         stage.setScene(new Scene(clientes)); 
         stage.setTitle("Clientes");
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
         
     }

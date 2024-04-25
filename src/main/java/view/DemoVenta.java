@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package view;
 
 import java.time.LocalDate;
@@ -9,10 +5,6 @@ import model.Cliente;
 import model.Producto;
 import model.Venta;
 
-/**
- *
- * @author Sistemas
- */
 public class DemoVenta {
 
     public static void main(String[] args) {

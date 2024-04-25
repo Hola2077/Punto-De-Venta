@@ -25,6 +25,9 @@ public class MainController {
     private Button ButtonInventario;
     
     @FXML
+    private Button ButtonDescuento;
+    
+    @FXML
     void MouseMoved(MouseEvent event) {
         ButtonCompra.setStyle("-fx-background-color: #0091ff");
     }
@@ -73,5 +76,22 @@ public class MainController {
         inventario.main();
     }
     
+    
+    @FXML
+    void MouseMovedDescuento(MouseEvent event) {
+        ButtonDescuento.setStyle("-fx-background-color: #0091ff");
+    }
+    
+    @FXML
+    void MouseExitedDescuento(MouseEvent event) {
+        ButtonDescuento.setStyle("-fx-background-color:  #00b7ff");
+    }
+    
+    DescuentoView descuento = new DescuentoView();
+    @FXML
+    void MousePressedDescuento(MouseEvent event) throws IOException{
+        ButtonDescuento.setStyle("-fx-background-color:  #03f507");
+        descuento.main();
+    }
     
 }
